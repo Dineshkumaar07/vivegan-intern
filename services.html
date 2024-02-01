@@ -7,7 +7,7 @@
     <title>OZIS TECHNOLOGIES</title>
 
     <style>
-        @import url('https://wallpaperaccess.com/full/367311.jpg');
+          @import url('https://wallpaperaccess.com/full/367311.jpg');
 
         body {
     font-family: 'Arial', Tahoma, Geneva, Verdana, sans-serif;
@@ -80,7 +80,7 @@ justify-content: stretch;
         h2 {
             font-family: 'Perpetua', sans-serif;
             font-size: 3em;
-           
+            font-color:white;
             color: black;
             margin: 0;
         }
@@ -133,18 +133,7 @@ color:white;
             box-sizing: border-box;
         }
 
-        #services {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            padding: 20px;
-        }
-
-     section {
-    display: flex;
-    justify-content: space-around;
-    
-}
+       
 .container {
       display: flex;
       flex-wrap: wrap-reverse;
@@ -193,6 +182,11 @@ color:white;
             text-align: center;
             padding: 1em 0;
         }
+
+        .service {
+            /* Your existing styles for service cards */
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -202,50 +196,66 @@ color:white;
     </header>
 
     <nav>
-        <a href="index.html" target="_blank">Home</a>
-        <a href="services.html">Services</a>
-        <a href="aboutus.html">About Us</a>
-        <a href="contact.html">Contact</a>
-        <a href="intern1.html">Intern</a>
+        <!-- Your existing navigation links -->
     </nav>
 
     <section id="services">
-        <!-- Content for the services section -->
         <h2>OUR EXPERTISE</h2>
         <section>
-        <div class="container">
-            <div class="row">
-            <div class="service">
-            <img src="https://tse1.mm.bing.net/th?id=OIP.yFBpFgsQJRfKHjM_LUk1fwHaFR&pid=Api&P=0&h=220" alt="Web Development Image">
-            <h3>Web Development</h3>
-            <p>We specialize in creating responsive and user-friendly websites tailored to your business requirements.</p>
-            </div>
-            
-            <div class="service">
-            <img src="https://tse1.mm.bing.net/th?id=OIP.XFf5AWeeKAuDTwUNXRbtFAHaFj&pid=Api&P=0&h=220" alt="Mobile App Development Image">
-            <h3>Mobile App Development</h3>
-            <p>Transform your ideas into powerful mobile applications with our skilled app development team.</p>
-            </div>
-            </div>
-            
-            <div class="row">
-            <div class="service">
-            <img src="https://tse2.mm.bing.net/th?id=OIP.yQ_oFFyri4rdl1sYylDqNwHaEy&pid=Api&P=0&h=220" alt="Software Solutions Image">
-            <h3>Software Solutions</h3>
-            <p>Our software solutions are designed to streamline your business processes and enhance efficiency.</p>
-            </div>
-            
-            <div class="service">
-            <img src="https://cdn5.vectorstock.com/i/1000x1000/64/54/logo-blockchain-vector-20896454.jpg" alt="Blockchain Image">
-            <h3>Blockchain</h3>
-            <p>Blockchain is a decentralized and secure digital ledger technology that records transactions across a network of computers.</p>
-            </div>
-            </div>
-            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="service" onclick="openService('https://en.wikipedia.org/wiki/Web_development')">
+                        <!-- Add 'onclick' attribute to trigger the function -->
+                        <img src="https://tse1.mm.bing.net/th?id=OIP.yFBpFgsQJRfKHjM_LUk1fwHaFR&pid=Api&P=0&h=220"
+                            alt="Web Development Image">
+                        <h3>Web Development</h3>
+                        <p>We specialize in creating responsive and user-friendly websites tailored to your business
+                            requirements.</p>
+                    </div>
 
+                    <!-- Repeat the same structure for other services -->
+                    <div class="service" onclick="openService('https://en.wikipedia.org/wiki/Mobile_app_development')">
+                        <img src="https://tse1.mm.bing.net/th?id=OIP.XFf5AWeeKAuDTwUNXRbtFAHaFj&pid=Api&P=0&h=220"
+                            alt="Mobile App Development Image">
+                        <h3>Mobile App Development</h3>
+                        <p>Transform your ideas into powerful mobile applications with our skilled app development
+                            team.</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="service" onclick="openService('https://en.wikipedia.org/wiki/Software')">
+                        <img src="https://tse2.mm.bing.net/th?id=OIP.yQ_oFFyri4rdl1sYylDqNwHaEy&pid=Api&P=0&h=220"
+                            alt="Software Solutions Image">
+                        <h3>Software Solutions</h3>
+                        <p>Our software solutions are designed to streamline your business processes and enhance
+                            efficiency.</p>
+                    </div>
+
+                    <div class="service" onclick="openService('https://en.wikipedia.org/wiki/Blockchain')">
+                        <img src="https://cdn5.vectorstock.com/i/1000x1000/64/54/logo-blockchain-vector-20896454.jpg"
+                            alt="Blockchain Image">
+                        <h3>Blockchain</h3>
+                        <p>Blockchain is a decentralized and secure digital ledger technology that records transactions
+                            across a network of computers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </section>
 
-    
+    <script>
+        function openService(url) {
+            // Function to open the iframe with the specified URL
+            var iframe = document.createElement('iframe');
+            iframe.src = url;
+            iframe.style.width = '25%';
+            iframe.style.height = '50vh';
+            iframe.style.border = 'none';
+            document.body.innerHTML = '';
+            document.body.appendChild(iframe);
+        }
+    </script>
 </body>
 
 </html>
